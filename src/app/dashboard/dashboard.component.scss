@@ -1,0 +1,85 @@
+.table-dark td, .table-dark th, .table-dark thead th {
+    border-color: #454d55;
+    color: #000;
+  }
+  tbody tr{
+    font-weight: 500;
+    font-size: 14px;
+    background:#fff;
+  }
+  thead tr{
+    background: lightgreen;
+    color: #000;
+   font-size: 16px;
+   font-weight: 500 !important;
+ 
+  }
+  thead tr th{
+   font-weight: 500 !important;
+ 
+  }
+  .tile{
+      font-size: 14px;
+      background: #49cc90;
+      font-weight: 700;
+      min-width: 80px;
+      padding: 6px 15px;
+      text-align: center;
+      border-radius: 3px;
+    //   text-shadow: 0 1px 0 rgb(0 0 0 / 10%);
+      font-family: sans-serif;
+      color: #fff;
+      color: #fff;
+      background-color: #28a745;
+      border-color: #28a745;
+  }
+  .spinner{
+    position: absolute;
+    top: 10%;
+    left: 8%;
+    background: wheat;
+    width: 85%;
+  }
+  .modal-header{
+    border-bottom: none !important;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    text-align: left;
+    background: darkgreen;
+    color:#fff;
+  }
+  .modal-body{
+    font-weight: 700;
+    height:550px;
+    overflow-y: scroll;
+  }
+  .modalText{
+    font-size:24px;
+    text-align: left;
+    font-weight: 900;
+  }
+  .tile1{
+    color: #fff !important;
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+    cursor:pointer;
+  }
+  .urltext{
+    color: darkgreen;
+    background: lightgreen;
+    padding: 3px;
+    border-radius: 9px;
+    font-size: 16px;
+    font-weight: bolder;
+  }
+  pre{
+    font-size:15px !important;
+    font-weight: bolder;
+  }
+  .first, .second, .third{
+    background: antiquewhite;
+  }
+  .table-bordered td, .table-bordered th {
+    border: 1px solid #999 !important;
+}
+  

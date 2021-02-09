@@ -1,0 +1,58 @@
+<nav *ngIf="showSidePanel" class="sidepanel">
+    <div class="text-center sidePanel">
+        <div class="rectangleOrange">
+            <div class="navproductname" *ngIf="currentOrganization">
+                <!-- <img src="../assets/img/{{currentOrganization}}.jpg" class="logothdimg"> -->
+                <img class="logothdimg" srcset="{{logoURLPath}}/logo_{{currentOrganization}}.jpg,
+                {{logoURLPath}}/logo_{{currentOrganization}}.png,">
+            </div>
+        </div>
+
+        <div class="navItems">
+            <!-- <div *ngFor="let menu of currentMenuItems" class="pointer" [routerLink]="[menu.link]" [ngClass]="(isSelected && isSelected == menu.id)?'menuItemActive':'menuItem'"> -->
+            <div *ngFor="let menu of currentMenuItems">
+                <div id = "menu.id" *ngIf="menu.id != 'REPORTS'" class="pointer menuItem" [routerLink]="[menu.link]"
+                    routerLinkActive="menuItemActive" [routerLinkActiveOptions]="{exact: true}">
+                    <span><img src="{{menu.icon}}" style="width:12%;" />&nbsp;&nbsp;{{menu.description}}</span>
+                    <img *ngIf="menu.id == 'REPORTS' && showReports == false;" style="float: right; width: 8%; margin-top: 21px;
+                margin-right: 5px;" src="assets/img/sort-down.png" alt="">
+                    <img *ngIf="menu.id == 'REPORTS' && showReports == true;" style="float: right; width: 8%; margin-top: 21px;
+                 margin-right: 5px;" src="assets/img/sort-up.png" alt="">
+                </div>
+
+                <div id = "menu.id" *ngIf="menu.id == 'REPORTS'" (click)="selectPanel(menu)" class="pointer menuItem">
+                    <span><img src="{{menu.icon}}" style="width:12%;" />&nbsp;&nbsp;{{menu.description}}</span>
+                    <img *ngIf="menu.id == 'REPORTS' && showReports == false;" style="float: right; width: 8%; margin-top: 21px;
+                margin-right: 5px;" src="assets/img/sort-down.png" alt="">
+                    <img *ngIf="menu.id == 'REPORTS' && showReports == true;" style="float: right; width: 8%; margin-top: 21px;
+                 margin-right: 5px;" src="assets/img/sort-up.png" alt="">
+                </div>
+            </div>
+            <div *ngIf="showReports" class="pointer">
+                <div *ngIf="currentOrganization === 'homedepot'" class="reportItems"
+                    style="line-height: inherit;text-indent: 0px;" [routerLink]="['reports/discrepanciespertenant']"
+                    routerLinkActive="menuItemActive" [routerLinkActiveOptions]="{exact: true}"><span
+                        style="font-size: 12px;"><img src="assets/img/list1.png" style="width:11%;" />
+                        &nbsp;Discrepancies Per Tenant</span></div>
+                <div *ngIf="currentOrganization === 'homedepot'" class="reportItems" style="line-height: inherit;"
+                    [routerLink]="['reports/overagenetting']" routerLinkActive="menuItemActive"
+                    [routerLinkActiveOptions]="{exact: true}"><span style="font-size: 14px;"><img
+                            src="assets/img/list1.png" style="width:11%;" /> &nbsp; Overage Netting</span></div>
+                <div class="reportItems" [routerLink]="['reports/skuvariancereport']" style="line-height: inherit;"
+                    routerLinkActive="menuItemActive" [routerLinkActiveOptions]="{exact: true}"> <span
+                        style="font-size: 14px;"><img src="assets/img/list1.png" style="width:11%;" /> &nbsp; SKU
+                        variance</span></div>
+                <div *ngIf="currentOrganization === 'homedepot'" class="reportItems" style="line-height: inherit;"
+                    [routerLink]="['reports/readytopay']" routerLinkActive="menuItemActive"
+                    [routerLinkActiveOptions]="{exact: true}">
+                    <span style="font-size: 14px;"> <img src="assets/img/list1.png" style="width:11%;" /> &nbsp; Ready
+                        To Pay</span></div>
+                <div *ngIf="currentOrganization === 'homedepot'" class="reportItems" style="line-height: inherit;"
+                    [routerLink]="['reports/matchreport']" routerLinkActive="menuItemActive"
+                    [routerLinkActiveOptions]="{exact: true}">
+                    <span style="font-size: 14px;"> <img src="assets/img/list1.png" style="width:11%;" /> &nbsp; Match
+                        Report</span></div>
+            </div>
+        </div>
+    </div>
+</nav>
