@@ -1,5 +1,5 @@
 .table-dark td, .table-dark th, .table-dark thead th {
-    border-color: #454d55;
+    border-color: indigo;
     color: #000;
   }
   tbody tr{
@@ -7,20 +7,41 @@
     font-size: 14px;
     background:#fff;
   }
-  thead tr{
-    background: lightgreen;
+  thead tr th{
+    background: #eee;
     color: #000;
    font-size: 16px;
    font-weight: 500 !important;
  
   }
+  .button1{
+    background-color: indigo;
+    color: #fff;
+  }
   thead tr th{
    font-weight: 500 !important;
  
   }
+  tbody tr:hover{
+    background-color: #eee;
+    border:2px solid #aaa;
+    // font-size: 14.5px;
+
+  }
+  .img-rounded{
+    height: 1000px;
+    width:100%;
+    float: left;
+    background-size: 100% 100%;
+  }
+.sticky-top1{
+  position: sticky;
+    top: 60px;
+    z-index: 1020;
+}
   .tile{
       font-size: 14px;
-      background: #49cc90;
+      background: indigo;
       font-weight: 700;
       min-width: 80px;
       padding: 6px 15px;
@@ -30,23 +51,24 @@
       font-family: sans-serif;
       color: #fff;
       color: #fff;
-      background-color: #28a745;
-      border-color: #28a745;
+      background-color: indigo;
+      border-color:indigo;
   }
   .spinner{
     position: absolute;
-    top: 10%;
+    top: 13%;
     left: 8%;
-    background: wheat;
+    background: #F1F1F1;
     width: 85%;
+    z-index: 1000000;
   }
   .modal-header{
     border-bottom: none !important;
     margin-bottom: 16px;
     padding-bottom: 10px;
     text-align: left;
-    background: darkgreen;
-    color:#fff;
+    background: indigo;
+    color: #fff;
   }
   .modal-body{
     font-weight: 700;
@@ -65,8 +87,8 @@
     cursor:pointer;
   }
   .urltext{
-    color: darkgreen;
-    background: lightgreen;
+    color: darkblue;
+    background: #fff;
     padding: 3px;
     border-radius: 9px;
     font-size: 16px;
@@ -77,9 +99,12 @@
     font-weight: bolder;
   }
   .first, .second, .third{
-    background: antiquewhite;
+    background: #fff;
   }
   .table-bordered td, .table-bordered th {
     border: 1px solid #999 !important;
+}
+.bg-dark{
+  background: indigo !important;
 }
   

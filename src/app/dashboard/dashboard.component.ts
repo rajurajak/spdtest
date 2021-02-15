@@ -10,19 +10,21 @@ import { RdcService } from '../_services/rdc.service';
 })
 export class DashboardComponent implements OnInit {
   public show = false;
-  public speedtestData;
+  public showScreenshots = false;
+  public speedtestData =[];
   public errorMsg;
   public SiteName;
   public siteUrl;
   public httpversion;
   public pageDT;
   public modaldata;
+  public  json;
   constructor(private _rdcService: RdcService) { }
   ngOnInit() {
-  //  const fs = require('fs');
+    document.getElementById('files').addEventListener('change', this.handleFileSelect, false);
     this._rdcService.getAllApiSpeed().subscribe(data => {
       if (data) {
-        this.showSpeedTestData(data);
+      //  this.showSpeedTestData(data);
       }
       else {
         console.log("File not uploaded properly");
@@ -30,41 +32,18 @@ export class DashboardComponent implements OnInit {
     }
       , error => this.errorMsg = error);
 
-      // this._rdcService.getAllfiles().subscribe(data => {
-      //   if (data) {
-      //   console.log(data);
-      //   }
-      //   else {
-      //     console.log("File not uploaded properly");
-      //   }
-      // }
-      //   , error => this.errorMsg = error);
-      // var directory =  "/assets/speedtest.json"
-      // var xmlHttp = new XMLHttpRequest();
-      // xmlHttp.open('GET', directory, false); // false for synchronous request
-      // xmlHttp.send(null);
-      // var ret = xmlHttp.responseText;
-      // var fileList = ret.split('\n');
-      // console.log(fileList);
-      
-      // for ( var i = 0; i < fileList.length; i++) {
-      //     var fileinfo = fileList[i].split(' ');
-      //     if (fileinfo[0] == '201:') {
-      //         document.write(fileinfo[1] + "<br>");
-      //         document.write('<img src=\"' + directory + fileinfo[1] + '\"/>');
-      //     }
-      // }
+  }
 
 
-      // const fs = this._fsService.fs as any;
-      // fs.readdir("/dashboard", function (err, items) {
-      //    if (err) {
-      //       return;
-      //    }
-      //    for (let i = 0; i < items.length; i++) {
-      //      console.log(items[i]);
-      //    }
-      // });
+  selectFile($event){
+   console.log($event.target.files[0]);
+   var file:File = $event.target.files[0];
+   const blob = new Blob([$event.target.files[0]], {type:"application/json"});
+    var myReader:FileReader = new FileReader();
+    myReader.onloadend = function(e){
+      console.log(myReader.result);
+    }
+    myReader.readAsText(blob);
   }
   showSpeedTestData(speedtestData) {
     console.log(speedtestData.log.entries);
@@ -79,4 +58,35 @@ export class DashboardComponent implements OnInit {
     this.show = true;
     this.modaldata = data;
   }
+handleFileSelect(evt) {
+  localStorage.removeItem('speedtestData');
+	var files = evt.target.files; // FileList object
+	var output = [];
+	for (var i = 0, f; f = files[i]; i++) {
+		var reader = new FileReader();
+	 reader.onload = (function (theFile) {
+			return function (e) {
+				try {
+					this.json = JSON.parse(e.target.result);
+          this.json.log.entries.forEach(item => {
+              item.request.headers = [];
+              item.request.cookies = [];
+              item.request._initiator = [];
+              item.request.url = item.request.url.split('?')[0];
+          });
+          this.json=  this.json.log.entries.filter(item=> item._resourceType == 'xhr');
+          localStorage.setItem("speedtestData", JSON.stringify(this.json));
+          console.log(this.speedtestData);
+        } catch (ex) {
+					alert('ex when trying to parse json = ' + ex);
+				}
+			}
+		})(f);
+		reader.readAsText(f);
+	}
+}
+showDATA(){
+  this.speedtestData =  JSON.parse(localStorage.getItem('speedtestData'));
+  console.log( this.speedtestData);
+}
 }

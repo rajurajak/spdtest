@@ -8,7 +8,8 @@ import { catchError, retry } from 'rxjs/operators';
 export class RdcService {
 
   // private _url = "/assets/data/rdc.json";
-  private _urlspeedtest = "/assets/speedtest.json"
+  //private _urlspeedtest = "https://rajurajak.github.io/spdtest/assets/speedtest.json"
+  private _urlspeedtest =  "/assets/speedtest.json";
 
   constructor(private http: HttpClient) { }
   // getAllfiles(): Observable<any[]> {
@@ -30,6 +31,19 @@ export class RdcService {
       );
   }
   handleError(error: HttpErrorResponse) {
+    return throwError(error.message || "Server Error")
+  }
+  uploadFile(fileToUpload: File): Observable<any[]> {
+    const endpoint = '/assets/';
+    const formData: FormData = new FormData();
+    formData.append('fileKey', fileToUpload, fileToUpload.name);
+    return this.http.post<any[]>(endpoint, formData)
+      .pipe(
+          
+        catchError(this.handleError1)
+      );
+  }
+  handleError1(error: HttpErrorResponse) {
     return throwError(error.message || "Server Error")
   }
 }

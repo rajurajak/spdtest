@@ -1,109 +1,235 @@
-<div class="col-sm-12" style="color:#000">
+<!-- <div class="header bg-light py-5">
+  <div class="container">
+      <div class="row">
+          <div class="col-6">
+              Header
+          </div>
+          <div class="col-6 text-right">
+              000 000 0000
+          </div>
+      </div>
+  </div>
+</div> -->
+<!-- <nav class="navbar navbar-expand-sm sticky-top navbar-light bg-dark">
+  <div class="">
+      <a class="navbar-brand" href="#">SPEEDTEST</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar1">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar1">
+          <ul class="navbar-nav">
+              <li class="nav-item active">
+                
+                <h6 style="font-size: 20px;" class="mb-0 text-white lh-100">thdblockchain.com</h6>
+              </li>
+              <li class="nav-item">
+                <h6 style="font-size: 30px;" class="mb-0 text-white lh-100">Record Network Activity </h6>
+              </li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <h6 class="mb-0 text-white lh-100">Httpversion - {{httpversion}}</h6>
+              </li>
+          </ul>
+      </div>
+  </div>
+</nav> -->
 
 
-    <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded box-shadow"
-      style="color:#000;background:indigo">
-      <div class="col-2" *ngIf="speedtestData" style="font-size: 16px;  font-weight: bolder;">
-        <small>HOST </small>
-        <h6 style="font-size: 20px;" class="mb-0 text-white lh-100">thdblockchain.com</h6>
-      </div>
-      <div class="col-8 text-center">
-        <h6 style="font-size: 30px;" class="mb-0 text-white lh-100">Record Network Activity </h6>
-      </div>
-      <div class="col-2 text-right">
-        <h6 class="mb-0 text-white lh-100">Httpversion - {{httpversion}}</h6>
-      </div>
+
+
+
+<div class="col-sm-12 " style="color:#000">
+  <div class="d-flex align-items-center p-3   text-white-50 bg-purple   box-shadow"
+    style="color:#000;background:indigo ;border-bottom: 1px solid;">
+    <div class="col-4" *ngIf="speedtestData" style="font-size: 16px;  font-weight: bolder;">
+      <h6 style="font-size: 30px;" class="mb-0 text-white lh-100">Record Network Activity </h6>
     </div>
-    <div class="d-flex  ">
-      <div style="color:#000; font-weight: bolder;" class="col-6">Page Start Date Time - {{pageDT}}</div>
-      <div class="col-6 text-right" style="color:red;font-weight: bolder;"> * seconds</div>
+    <div class="col-6 text-center">
+
     </div>
-    <table class="table table-bordered ">
-      <thead>
-        <tr>
-          <th scope="col">Method</th>
-          <th scope="col">API</th>
-          <th scope="col">Status</th>
-          <th scope="col">Time</th>
-          <!-- <th scope="col">Started Date Time</th> -->
-          <th scope="col">Blocked</th>
-          <th scope="col">DNS</th>
-          <th scope="col">SSL</th>
-          <th scope="col">Connect</th>
-          <th scope="col">Send</th>
-          <th scope="col">Wait</th>
-          <th scope="col">Receive</th>
-          <th scope="col">Queueing</th>
-          <th scope="col">Details</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let data of speedtestData">
-          <th *ngIf="data._resourceType === 'xhr'" scope="row">
-            <span class="tile">{{data.request.method}} </span>
-          </th>
-          <td style=" font-weight:bold;" *ngIf="data._resourceType === 'xhr'" scope="col">
-            {{data.request.url}} </td>
-  
-          <td *ngIf="data._resourceType === 'xhr'" scope="col">{{data.response.status}}</td>
-          <td style="background :khaki ;font-weight:bold;" *ngIf="data._resourceType === 'xhr'" scope="col">
-            {{data.time/1000 | number:
-            '1.0-2'}}</td>
-          <!-- <td *ngIf="data._resourceType === 'xhr'" scope="col" >{{data.startedDateTime}}</td> -->
-          <td *ngIf="data._resourceType === 'xhr'" scope="col">
-            {{data.timings.blocked/1000 | number: '1.0-2'}}
-          </td>
-          <td *ngIf="data._resourceType === 'xhr'" scope="col">
-            {{data.timings.dns/1000 | number: '1.0-4'}}
-          </td>
-          <td *ngIf="data._resourceType === 'xhr'" scope="col">
-            {{data.timings.ssl/1000 | number: '1.0-2'}}
-          </td>
-          <td *ngIf="data._resourceType === 'xhr'" scope="col">
-            {{data.timings.connect/1000 | number: '1.0-2'}}
-          </td>
-          <td *ngIf="data._resourceType === 'xhr'" scope="col">
-            {{data.timings.send/1000 | number: '1.0-2'}}
-          </td>
-          <td *ngIf="data._resourceType === 'xhr'" scope="col">
-            {{data.timings.wait/1000 | number: '1.0-2'}}
-          </td>
-          <td *ngIf="data._resourceType === 'xhr'" scope="col">
-            {{data.timings.receive/1000 | number: '1.0-2'}}
-          </td>
-          <td *ngIf="data._resourceType === 'xhr'" scope="col">
-            {{data.timings._blocked_queueing/1000 | number: '1.0-4'}}
-          </td>
-          <td *ngIf="data._resourceType === 'xhr'" scope="col">
-            <a (click)="showJSONDATA(data);" class="tile tile1">Info</a>
-  
-          </td>
-  
-        </tr>
-      </tbody>
-    </table>
-    <!-- Spinner and modals-->
-    <div class="spinner inviteSent" *ngIf="show">
-      <div class="spinnerIcon">
-        <div class="modal-header ">
-          <h5 class="modal-title">Server IP Address -{{modaldata.serverIPAddress}} </h5>
-          <h5 class="modal-title">
-            Start Date Time - {{modaldata.startedDateTime}}
-          </h5>
-          <h5 class="modal-title"> Total Time - {{modaldata.
-            time/1000}}(s)</h5>
-          <button (click)="show = false;" type="button" class="btn btn-success">CLOSE</button>
-        </div>
-        <div class="modal-body" style="text-align:left;">
-          <h4 class="text-left">Network Logs - <span class="urltext">{{modaldata.request.url}}</span></h4>
-          <h4 style="background: burlywood;  padding: 10px; " class="text-left">Timings(ms)</h4>
-          <pre class="first">{{modaldata.timings | json}}</pre>
-          <h4 style="background: burlywood;  padding: 10px; " class="text-left">Request</h4>
-          <pre class="second">{{modaldata.request | json}}</pre>
-          <h4 style="background: burlywood;  padding: 10px; " class="text-left">Response</h4>
-          <pre class="third">{{modaldata.response | json}}</pre>
-        </div>
-      </div>
+    <div class="col-2 text-right">
+      <h6 class="mb-0 text-white lh-100">Httpversion - {{httpversion}}</h6>
     </div>
   </div>
-  
+  <div class="sticky-top d-flex align-items-center p-3    bg-purple   box-shadow"
+    style="color:#000 !important;background:#fff;    box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);">
+    <div class="col-2" *ngIf="speedtestData" style="font-size: 16px;  font-weight: bolder;">
+
+      <h6 style="font-size: 20px;" class="mb-0  lh-100">Network Logs</h6>
+    </div>
+    <div class="col-6 text-center">
+      <!-- <h6 style="font-size: 30px;" class="mb-0 text-white lh-100">Record Network Activity </h6> -->
+    </div>
+    <div class="col-4 text-right">
+      <input class="col-8 text-center " type="file" id="files" name="files[]"  />
+      <button class="btn button1 col-4 text-center" (click)="showDATA();">SHOW DATA</button>
+    </div>
+  </div>
+
+  <div class="  text-center" *ngIf="speedtestData.length == 0">
+
+    <br>
+    <br>
+    <div class=" container  text-left">
+      <h3  class="p-3 mb-2 bg-dark text-white">
+        Steps to record network activity
+      </h3>
+      <p>
+        <br>
+        <li>
+          Use chrome or any other browser >> right click on the page and click inspect( i.e. the page which you want to
+          record)
+        </li>
+        <li>
+          Open any website/application you want to record the network activity. (Eg. wwww.homedepot.com)
+        </li>
+        <li>
+          In the inspect window go to “Network” by default the recording will be started click on the action you want to
+          perform on webpage for which you wanted UI load time.
+        </li>
+        <li>
+          Once the action is completed now in inspect network tab “right” click on the file under header “Name” and use
+          option “save all HAR” and save as per your naming preference it to your local folder as “.json” file.
+        </li>
+        <li>
+          Now browser or choose the file which is saved in your local folder as ".json" file.
+        </li>
+        <li>
+          After uploading the ".json" file click on Show Data button.
+        </li>
+   
+      </p>
+    </div>
+    <br>
+    <h3 class="container text-left   p-3 mb-2 bg-dark text-white">
+      Sample video to record network activity.
+    </h3>
+    <video width="800" controls id="firstVideo">
+      <!-- <source src="https://rajurajak.github.io/spdtest/assets/training-video.mp4" type="video/mp4">
+      <source src="https://rajurajak.github.io/spdtest/assets/training-video.ogg" type="video/ogg"> -->
+
+      <source src=" https://rajurajak.github.io/spdtest/assets/Training-Video.mp4" type="video/mp4">
+      <source src=" https://rajurajak.github.io/spdtest/assets/Training-Video.ogg" type="video/ogg">
+
+
+      Your browser does not support HTML video.
+    </video>
+    <br>
+    <br>
+    <div class=" text-left container  ">
+      <div (click)="showScreenshots = !showScreenshots"  
+      class="p-3 mb-2 bg-dark text-white">
+      <h3 >Click to see sample screens 
+        </h3>
+      </div>
+      <br>
+     
+      <div class="showImages" *ngIf="showScreenshots">
+        <img src=" https://rajurajak.github.io/spdtest/assets/a.png" class="img-rounded" alt="Cinque Terre">
+
+        <img src=" https://rajurajak.github.io/spdtest/assets/b.png" class="img-rounded" alt="Cinque Terre">
+
+        <img src=" https://rajurajak.github.io/spdtest/assets/c.png" class="img-rounded" alt="Cinque Terre">
+
+        <img src=" https://rajurajak.github.io/spdtest/assets/d.png" class="img-rounded" alt="Cinque Terre">
+
+        <img src=" https://rajurajak.github.io/spdtest/assets/e.png" class="img-rounded" alt="Cinque Terre">
+
+        <img src=" https://rajurajak.github.io/spdtest/assets/f.png" class="img-rounded" alt="Cinque Terre">
+      </div>
+      <br>
+    </div>
+
+
+  </div>
+  <div class="d-flex p-3 " *ngIf="speedtestData.length > 0">
+    <div class="col-9 text-left" style="color:red;font-weight: bolder;"> * seconds</div>
+
+  </div>
+  <table *ngIf="speedtestData.length > 0" class="table table-bordered ">
+    <thead>
+      <tr>
+        <th class="sticky-top1" scope="col">Method</th>
+        <th class="sticky-top1" scope="col">API</th>
+        <th class="sticky-top1" scope="col">Status</th>
+        <th class="sticky-top1" scope="col">Time</th>
+        <th class="sticky-top1" scope="col">Blocked</th>
+        <th class="sticky-top1" scope="col">DNS</th>
+        <th class="sticky-top1" scope="col">SSL</th>
+        <th class="sticky-top1" scope="col">Connect</th>
+        <th class="sticky-top1" scope="col">Send</th>
+        <th class="sticky-top1" scope="col">Wait</th>
+        <th class="sticky-top1" scope="col">Receive</th>
+        <th class="sticky-top1" scope="col">Queueing</th>
+        <th class="sticky-top1" scope="col">Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of speedtestData">
+        <th *ngIf="data._resourceType === 'xhr'" scope="row">
+          <span class="tile">{{data.request.method}} </span>
+        </th>
+        <td *ngIf="data._resourceType === 'xhr'" scope="col">
+          {{data.request.url}} </td>
+
+        <td *ngIf="data._resourceType === 'xhr'" scope="col">{{data.response.status}}</td>
+        <td style="background :#eee ;font-weight:bold;" *ngIf="data._resourceType === 'xhr'" scope="col">
+          {{data.time/1000 | number:
+          '1.0-2'}}</td>
+        <td *ngIf="data._resourceType === 'xhr'" scope="col">
+          {{data.timings.blocked/1000 | number: '1.0-2'}}
+        </td>
+        <td *ngIf="data._resourceType === 'xhr'" scope="col">
+          {{data.timings.dns/1000 | number: '1.0-4'}}
+        </td>
+        <td *ngIf="data._resourceType === 'xhr'" scope="col">
+          {{data.timings.ssl/1000 | number: '1.0-2'}}
+        </td>
+        <td *ngIf="data._resourceType === 'xhr'" scope="col">
+          {{data.timings.connect/1000 | number: '1.0-2'}}
+        </td>
+        <td *ngIf="data._resourceType === 'xhr'" scope="col">
+          {{data.timings.send/1000 | number: '1.0-2'}}
+        </td>
+        <td *ngIf="data._resourceType === 'xhr'" scope="col">
+          {{data.timings.wait/1000 | number: '1.0-2'}}
+        </td>
+        <td *ngIf="data._resourceType === 'xhr'" scope="col">
+          {{data.timings.receive/1000 | number: '1.0-2'}}
+        </td>
+        <td *ngIf="data._resourceType === 'xhr'" scope="col">
+          {{data.timings._blocked_queueing/1000 | number: '1.0-4'}}
+        </td>
+        <td *ngIf="data._resourceType === 'xhr'" scope="col">
+          <a (click)="showJSONDATA(data);" class="tile tile1">Info</a>
+
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+  <div class="spinner inviteSent" *ngIf="show">
+    <div class="spinnerIcon">
+      <div class="modal-header ">
+        <h5 class="modal-title">Server IP Address -{{modaldata.serverIPAddress}} </h5>
+        <h5 class="modal-title">
+          Start Date Time - {{modaldata.startedDateTime}}
+        </h5>
+        <h5 class="modal-title"> Total Time - {{modaldata.
+          time/1000}}(s)</h5>
+        <button (click)="show = false;" type="button" class="btn btn-light">CLOSE</button>
+      </div>
+      <div class="modal-body" style="text-align:left;">
+        <h4 class="text-left">Network Logs - <span class="urltext">{{modaldata.request.url}}</span></h4>
+        <h4 style="background: #fff;  padding: 10px; " class="text-left">Timings(ms)</h4>
+        <pre class="first">{{modaldata.timings | json}}</pre>
+        <h4 style="background: #fff;  padding: 10px; " class="text-left">Request</h4>
+        <pre class="second">{{modaldata.request | json}}</pre>
+        <h4 style="background: #fff;  padding: 10px; " class="text-left">Response</h4>
+        <pre class="third">{{modaldata.response | json}}</pre>
+      </div>
+      <div class="modal-footer"></div>
+    </div>
+  </div>
+</div>
