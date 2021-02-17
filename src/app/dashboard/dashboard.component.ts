@@ -10,7 +10,7 @@ import { RdcService } from '../_services/rdc.service';
 })
 export class DashboardComponent implements OnInit {
   public show = false;
-  public showScreenshots = false;
+  public showScreenshots = true;
   public speedtestData =[];
   public errorMsg;
   public SiteName;
