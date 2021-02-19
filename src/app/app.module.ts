@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SidepanelComponent } from './sidepanel/sidepanel.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ExcelService } from './_services/excel.service';
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -22,6 +23,9 @@ import { HttpClientModule } from '@angular/common/http';
 		FormsModule,
 		AppRoutingModule,
 	],
+	providers: [
+		 ExcelService
+	  ],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }

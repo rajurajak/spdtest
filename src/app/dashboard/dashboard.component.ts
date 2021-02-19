@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ExcelService } from '../_services/excel.service';
 import { RdcService } from '../_services/rdc.service';
 // import {FsService} from 'ngx-fs';
 // import { writeFileSync, readFileSync } from 'fs';
@@ -10,6 +11,7 @@ import { RdcService } from '../_services/rdc.service';
 })
 export class DashboardComponent implements OnInit {
   public show = false;
+  public showdownlaodCSV = false;
   public showScreenshots = true;
   public speedtestData =[];
   public errorMsg;
@@ -19,7 +21,8 @@ export class DashboardComponent implements OnInit {
   public pageDT;
   public modaldata;
   public  json;
-  constructor(private _rdcService: RdcService) { }
+  constructor(private _rdcService: RdcService,
+    private excelService: ExcelService,) { }
   ngOnInit() {
     document.getElementById('files').addEventListener('change', this.handleFileSelect, false);
     this._rdcService.getAllApiSpeed().subscribe(data => {
@@ -88,5 +91,33 @@ handleFileSelect(evt) {
 showDATA(){
   this.speedtestData =  JSON.parse(localStorage.getItem('speedtestData'));
   console.log( this.speedtestData);
+  this.showdownlaodCSV = this.speedtestData.length > 0 ? true: false;
+}
+exportASXlsx() {
+  let tempList = [];
+  if (this.speedtestData) {
+    console.log(this.speedtestData);
+    this.speedtestData.forEach((item: any) => {
+      let tempItem = {};
+      // tempItem['poCreationDate'] = this.getFormattedExcelDate(item['poCreationDate']);
+      // item['keyRecDate'].forEach((item3: any) => {
+      //   tempItem['keyRecDate'] = this.getFormattedExcelDate(item3);
+      // });
+      tempItem['Method'] = item.request.method;
+      tempItem['URL'] = item.request.url;
+      tempItem['Status'] = item.response.status;
+      tempItem['Time'] = item.time/1000;
+      tempItem['Blocked'] = item.timings.blocked/1000;
+      tempItem['DNS'] = item.timings.dns/1000;
+      tempItem['SSL'] = item.timings.ssl/1000;
+      tempItem['Connect'] = item.timings.connect/1000;
+      tempItem['Send'] = item.timings.send/1000;
+      tempItem['Wait'] = item.timings.wait/1000;
+      tempItem['Receive'] = item.timings.receive/1000;
+      tempItem['Blocked Queueing'] = item.timings._blocked_queueing/1000;
+      tempList.push(tempItem);
+    });
+  }
+  this.excelService.exportAsExcelFile(tempList, 'API_logs');
 }
 }
