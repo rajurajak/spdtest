@@ -1,0 +1,358 @@
+https://youtu.be/wElk1W1BJ2o
+
+
+Microsoft Windows [Version 10.0.19041.746]
+(c) 2020 Microsoft Corporation. All rights reserved.
+
+C:\spdtest>git init
+Reinitialized existing Git repository in C:/spdtest/.git/
+
+C:\spdtest>git add .
+warning: LF will be replaced by CRLF in src/app/dashboard/dashboard.component.html.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/app/dashboard/dashboard.component.spec.ts.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/app/dashboard/dashboard.component.ts.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/app/sidepanel/sidepanel.component.html.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/app/sidepanel/sidepanel.component.spec.ts.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/app/sidepanel/sidepanel.component.ts.
+The file will have its original line endings in your working directory
+
+C:\spdtest>git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .editorconfig
+        modified:   .gitignore
+        new file:   .nvmrc
+        modified:   README.md
+        new file:   angular.json
+        new file:   browserslist
+        new file:   dashboard.html
+        new file:   e2e/app.e2e-spec.ts
+        new file:   e2e/app.po.ts
+        new file:   e2e/tsconfig.e2e.json
+        new file:   karma.conf.js
+        new file:   package-lock.json
+        new file:   package.json
+        new file:   postcss.config.js
+        new file:   protractor.conf.js
+        new file:   sidepanel.html
+        new file:   src/app/_services/rdc.service.spec.ts
+        new file:   src/app/_services/rdc.service.ts
+        new file:   src/app/app-routing.module.ts
+        new file:   src/app/app.component.css
+        new file:   src/app/app.component.html
+        new file:   src/app/app.component.spec.ts
+        new file:   src/app/app.component.ts
+        new file:   src/app/app.module.ts
+        new file:   src/app/dashboard/dashboard.component.html
+        new file:   src/app/dashboard/dashboard.component.scss
+        new file:   src/app/dashboard/dashboard.component.spec.ts
+        new file:   src/app/dashboard/dashboard.component.ts
+        new file:   src/app/header/header.component.css
+        new file:   src/app/header/header.component.html
+        new file:   src/app/header/header.component.spec.ts
+        new file:   src/app/header/header.component.ts
+        new file:   src/app/sidepanel/sidepanel.component.html
+        new file:   src/app/sidepanel/sidepanel.component.scss
+        new file:   src/app/sidepanel/sidepanel.component.spec.ts
+        new file:   src/app/sidepanel/sidepanel.component.ts
+        new file:   src/assets/.gitkeep
+        new file:   src/assets/scss/base/_variables.scss
+        new file:   src/assets/scss/scss-utils.scss
+        new file:   src/assets/speedtest.json
+        new file:   src/environments/environment.prod.ts
+        new file:   src/environments/environment.ts
+        new file:   src/favicon.ico
+        new file:   src/index.html
+        new file:   src/main.ts
+        new file:   src/manifest.json
+        new file:   src/polyfills.ts
+        new file:   src/styles.scss
+        new file:   src/sw.js
+        new file:   src/test.ts
+        new file:   src/tsconfig.app.json
+        new file:   src/tsconfig.spec.json
+        new file:   src/typings.d.ts
+        new file:   tsconfig.json
+        new file:   tslint.json
+
+
+C:\spdtest>git add
+Nothing specified, nothing added.
+Maybe you wanted to say 'git add .'?
+
+C:\spdtest>git add .
+
+C:\spdtest>git commit -m "first commit"
+[main c1a5637] first commit
+ 55 files changed, 71122 insertions(+), 105 deletions(-)
+ create mode 100644 .editorconfig
+ rewrite .gitignore (98%)
+ create mode 100644 .nvmrc
+ rewrite README.md (100%)
+ create mode 100644 angular.json
+ create mode 100644 browserslist
+ create mode 100644 dashboard.html
+ create mode 100644 e2e/app.e2e-spec.ts
+ create mode 100644 e2e/app.po.ts
+ create mode 100644 e2e/tsconfig.e2e.json
+ create mode 100644 karma.conf.js
+ create mode 100644 package-lock.json
+ create mode 100644 package.json
+ create mode 100644 postcss.config.js
+ create mode 100644 protractor.conf.js
+ create mode 100644 sidepanel.html
+ create mode 100644 src/app/_services/rdc.service.spec.ts
+ create mode 100644 src/app/_services/rdc.service.ts
+ create mode 100644 src/app/app-routing.module.ts
+ create mode 100644 src/app/app.component.css
+ create mode 100644 src/app/app.component.html
+ create mode 100644 src/app/app.component.spec.ts
+ create mode 100644 src/app/app.component.ts
+ create mode 100644 src/app/app.module.ts
+ create mode 100644 src/app/dashboard/dashboard.component.html
+ create mode 100644 src/app/dashboard/dashboard.component.scss
+ create mode 100644 src/app/dashboard/dashboard.component.spec.ts
+ create mode 100644 src/app/dashboard/dashboard.component.ts
+ create mode 100644 src/app/header/header.component.css
+ create mode 100644 src/app/header/header.component.html
+ create mode 100644 src/app/header/header.component.spec.ts
+ create mode 100644 src/app/header/header.component.ts
+ create mode 100644 src/app/sidepanel/sidepanel.component.html
+ create mode 100644 src/app/sidepanel/sidepanel.component.scss
+ create mode 100644 src/app/sidepanel/sidepanel.component.spec.ts
+ create mode 100644 src/app/sidepanel/sidepanel.component.ts
+ create mode 100644 src/assets/.gitkeep
+ create mode 100644 src/assets/scss/base/_variables.scss
+ create mode 100644 src/assets/scss/scss-utils.scss
+ create mode 100644 src/assets/speedtest.json
+ create mode 100644 src/environments/environment.prod.ts
+ create mode 100644 src/environments/environment.ts
+ create mode 100644 src/favicon.ico
+ create mode 100644 src/index.html
+ create mode 100644 src/main.ts
+ create mode 100644 src/manifest.json
+ create mode 100644 src/polyfills.ts
+ create mode 100644 src/styles.scss
+ create mode 100644 src/sw.js
+ create mode 100644 src/test.ts
+ create mode 100644 src/tsconfig.app.json
+ create mode 100644 src/tsconfig.spec.json
+ create mode 100644 src/typings.d.ts
+ create mode 100644 tsconfig.json
+ create mode 100644 tslint.json
+
+C:\spdtest>git push -u origin master
+error: src refspec master does not match any
+error: failed to push some refs to 'https://github.com/rajurajak/spdtest.git'
+
+C:\spdtest>git push -u origin main
+Logon failed, use ctrl+c to cancel basic credential prompt.
+Username for 'https://github.com': rajurajak007@gmail.com
+Password for 'https://rajurajak007@gmail.com@github.com':
+Enumerating objects: 70, done.
+Counting objects: 100% (70/70), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (60/60), done.
+Writing objects: 100% (67/67), 5.48 MiB | 526.00 KiB/s, done.
+Total 67 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/rajurajak/spdtest.git
+   d8e0a82..c1a5637  main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+
+C:\spdtest>git remote add origin https://github.com/rajurajak/spdtest.git
+fatal: remote origin already exists.
+
+C:\spdtest>npm install -g angular-cli-ghpages
+C:\Users\RajuRajak\AppData\Roaming\npm\angular-cli-ghpages -> C:\Users\RajuRajak\AppData\Roaming\npm\node_modules\angular-cli-ghpages\angular-cli-ghpages
+C:\Users\RajuRajak\AppData\Roaming\npm\ngh -> C:\Users\RajuRajak\AppData\Roaming\npm\node_modules\angular-cli-ghpages\angular-cli-ghpages
+npm WARN angular-cli-ghpages@1.0.0-rc.1 requires a peer of @angular-devkit/architect@>= 0.900 < 0.1200 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-cli-ghpages@1.0.0-rc.1 requires a peer of @angular-devkit/core@^9.0.0 || ^10.0.0 || ^11.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN angular-cli-ghpages@1.0.0-rc.1 requires a peer of @angular-devkit/schematics@^9.0.0 || ^10.0.0 || ^11.0.0 but none is installed. You must install peer dependencies yourself.
+
++ angular-cli-ghpages@1.0.0-rc.1
+added 58 packages from 16 contributors in 12.373s
+
+C:\spdtest>ng build --prod --base-href "https://rajurajak.github.io/spdtest/"
+An unhandled exception occurred: Cannot find module '@angular/compiler-cli'
+Require stack:
+- C:\Users\RajuRajak\AppData\Roaming\npm\node_modules\@angular-devkit\build-angular\node_modules\@ngtools\webpack\src\angular_compiler_plugin.js
+- C:\Users\RajuRajak\AppData\Roaming\npm\node_modules\@angular-devkit\build-angular\node_modules\@ngtools\webpack\src\index.js
+- C:\Users\RajuRajak\AppData\Roaming\npm\node_modules\@angular-devkit\build-angular\src\angular-cli-files\models\webpack-configs\typescript.js
+- C:\Users\RajuRajak\AppData\Roaming\npm\node_modules\@angular-devkit\build-angular\src\angular-cli-files\models\webpack-configs\index.js
+- C:\Users\RajuRajak\AppData\Roaming\npm\node_modules\@angular-devkit\build-angular\src\browser\index.js
+- C:\Users\RajuRajak\AppData\Roaming\npm\node_modules\@angular\cli\node_modules\@angular-devkit\architect\node\node-modules-architect-host.js
+- C:\Users\RajuRajak\AppData\Roaming\npm\node_modules\@angular\cli\node_modules\@angular-devkit\architect\node\index.js
+- C:\Users\RajuRajak\AppData\Roaming\npm\node_modules\@angular\cli\models\architect-command.js
+- C:\Users\RajuRajak\AppData\Roaming\npm\node_modules\@angular\cli\commands\build-impl.js
+- C:\Users\RajuRajak\AppData\Roaming\npm\node_modules\@angular\cli\node_modules\@angular-devkit\schematics\tools\export-ref.js
+- C:\Users\RajuRajak\AppData\Roaming\npm\node_modules\@angular\cli\node_modules\@angular-devkit\schematics\tools\index.js
+- C:\Users\RajuRajak\AppData\Roaming\npm\node_modules\@angular\cli\utilities\json-schema.js
+- C:\Users\RajuRajak\AppData\Roaming\npm\node_modules\@angular\cli\models\command-runner.js
+- C:\Users\RajuRajak\AppData\Roaming\npm\node_modules\@angular\cli\lib\cli\index.js
+- C:\Users\RajuRajak\AppData\Roaming\npm\node_modules\@angular\cli\lib\init.js
+- C:\Users\RajuRajak\AppData\Roaming\npm\node_modules\@angular\cli\bin\ng
+See "C:\Users\RAJURA~1\AppData\Local\Temp\ng-ZBgOCy\angular-errors.log" for further details.
+
+C:\spdtest>npm install
+
+> node-sass@4.14.1 install C:\spdtest\node_modules\node-sass
+> node scripts/install.js
+
+Cached binary found at C:\Users\RajuRajak\AppData\Roaming\npm-cache\node-sass\4.14.1\win32-x64-72_binding.node
+
+> core-js@3.6.4 postinstall C:\spdtest\node_modules\@angular-devkit\build-angular\node_modules\core-js
+> node -e "try{require('./postinstall')}catch(e){}"
+
+Thank you for using core-js ( https://github.com/zloirock/core-js ) for polyfilling JavaScript standard library!
+
+The project needs your help! Please consider supporting of core-js on Open Collective or Patreon:
+> https://opencollective.com/core-js
+> https://www.patreon.com/zloirock
+
+Also, the author of core-js ( https://github.com/zloirock ) is looking for a good job -)
+
+
+> @angular/cli@8.3.29 postinstall C:\spdtest\node_modules\@angular\cli
+> node ./bin/postinstall/script.js
+
+
+> core-js@3.8.3 postinstall C:\spdtest\node_modules\core-js
+> node -e "try{require('./postinstall')}catch(e){}"
+
+
+> node-sass@4.14.1 postinstall C:\spdtest\node_modules\node-sass
+> node scripts/build.js
+
+Binary found at C:\spdtest\node_modules\node-sass\vendor\win32-x64-72\binding.node
+Testing binary
+Binary is fine
+npm WARN The package @ng-bootstrap/ng-bootstrap is included as both a dev and production dependency.
+npm WARN The package bootstrap is included as both a dev and production dependency.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.13 (node_modules\webpack-dev-server\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.13 (node_modules\watchpack-chokidar2\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.13 (node_modules\@angular\compiler-cli\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.3.1 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.3.1: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
+added 1342 packages from 1114 contributors and audited 1350 packages in 91.074s
+
+50 packages are looking for funding
+  run `npm fund` for details
+
+found 5 low severity vulnerabilities
+  run `npm audit fix` to fix them, or `npm audit` for details
+
+C:\spdtest>ng build --prod --base-href "https://rajurajak.github.io/spdtest/"
+Generating ES5 bundles for differential loading...
+ES5 bundle generation complete.
+
+chunk {0} runtime-es2015.cdfb0ddb511f65fdc0a0.js (runtime) 1.45 kB [entry] [rendered]
+chunk {0} runtime-es5.cdfb0ddb511f65fdc0a0.js (runtime) 1.45 kB [entry] [rendered]
+chunk {2} polyfills-es2015.d43b86d3e27b3006e3c1.js (polyfills) 36.3 kB [initial] [rendered]
+chunk {3} polyfills-es5.68b5d51869e622ffa6eb.js (polyfills-es5) 127 kB [initial] [rendered]
+chunk {1} main-es2015.ed08834660475f6d8a86.js (main) 317 kB [initial] [rendered]
+chunk {1} main-es5.ed08834660475f6d8a86.js (main) 386 kB [initial] [rendered]
+chunk {4} styles.81721221fa8371f6efa6.css (styles) 142 kB [initial] [rendered]
+Date: 2021-02-09T12:53:42.032Z - Hash: 797cbfea3182753a81fd - Time: 125706ms
+
+C:\spdtest>ngh --dir dist
+🚀 Uploading via git, please wait...
+Username for 'https://github.com': rajurajak007@gmail.com
+Password for 'https://rajurajak007@gmail.com@github.com':
+🌟 Successfully published via angular-cli-ghpages! Have a nice day!
+
+C:\spdtest>ng s --o
+10% building 3/3 modules 0 activei ｢wds｣: Project is running at http://localhost:4200/webpack-dev-server/
+i ｢wds｣: webpack output is served from /
+i ｢wds｣: 404s will fallback to //index.html
+
+chunk {main} main.js, main.js.map (main) 46.8 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 283 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 6.15 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 1.16 MB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 4.77 MB [initial] [rendered]
+Date: 2021-02-09T13:01:18.795Z - Hash: d31bc7154b490ddd5110 - Time: 24919ms
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+i ｢wdm｣: Compiled successfully.
+^CTerminate batch job (Y/N)? y
+
+C:\spdtest>ng build --prod --base-href "https://rajurajak.github.io/spdtest/"
+Generating ES5 bundles for differential loading...
+ES5 bundle generation complete.
+
+chunk {2} polyfills-es2015.d43b86d3e27b3006e3c1.js (polyfills) 36.3 kB [initial] [rendered]
+chunk {3} polyfills-es5.68b5d51869e622ffa6eb.js (polyfills-es5) 127 kB [initial] [rendered]
+chunk {1} main-es2015.ed08834660475f6d8a86.js (main) 317 kB [initial] [rendered]
+chunk {1} main-es5.ed08834660475f6d8a86.js (main) 386 kB [initial] [rendered]
+chunk {0} runtime-es2015.cdfb0ddb511f65fdc0a0.js (runtime) 1.45 kB [entry] [rendered]
+chunk {0} runtime-es5.cdfb0ddb511f65fdc0a0.js (runtime) 1.45 kB [entry] [rendered]
+chunk {4} styles.81721221fa8371f6efa6.css (styles) 142 kB [initial] [rendered]
+Date: 2021-02-09T13:02:48.786Z - Hash: 797cbfea3182753a81fd - Time: 43152ms
+
+C:\spdtest>ngh --dir dist
+🚀 Uploading via git, please wait...
+Username for 'https://github.com': rajurajak007@gmail.com
+Password for 'https://rajurajak007@gmail.com@github.com':
+🌟 Successfully published via angular-cli-ghpages! Have a nice day!
+
+C:\spdtest>ng build --prod --base-href "https://rajurajak.github.io/spdtest/" -d "/spdtest"
+Unknown option: '-d'
+Unknown option: '/spdtest'
+
+C:\spdtest>ng build --prod --base-href "https://rajurajak.github.io/spdtest/"
+Generating ES5 bundles for differential loading...
+ES5 bundle generation complete.
+
+chunk {3} polyfills-es5.68b5d51869e622ffa6eb.js (polyfills-es5) 127 kB [initial] [rendered]
+chunk {2} polyfills-es2015.d43b86d3e27b3006e3c1.js (polyfills) 36.3 kB [initial] [rendered]
+chunk {0} runtime-es2015.cdfb0ddb511f65fdc0a0.js (runtime) 1.45 kB [entry] [rendered]
+chunk {0} runtime-es5.cdfb0ddb511f65fdc0a0.js (runtime) 1.45 kB [entry] [rendered]
+chunk {1} main-es2015.ed08834660475f6d8a86.js (main) 317 kB [initial] [rendered]
+chunk {1} main-es5.ed08834660475f6d8a86.js (main) 386 kB [initial] [rendered]
+chunk {4} styles.81721221fa8371f6efa6.css (styles) 142 kB [initial] [rendered]
+Date: 2021-02-09T13:18:59.760Z - Hash: 797cbfea3182753a81fd - Time: 42575ms
+
+C:\spdtest>ngh --dir dist
+🚀 Uploading via git, please wait...
+Username for 'https://github.com': rajurajak007@gmail.com
+Password for 'https://rajurajak007@gmail.com@github.com':
+🌟 Successfully published via angular-cli-ghpages! Have a nice day!
+
+C:\spdtest>ng build
+Generating ES5 bundles for differential loading...
+ES5 bundle generation complete.
+
+chunk {polyfills} polyfills-es2015.js, polyfills-es2015.js.map (polyfills) 283 kB [initial] [rendered]
+chunk {runtime} runtime-es2015.js, runtime-es2015.js.map (runtime) 6.16 kB [entry] [rendered]
+chunk {runtime} runtime-es5.js, runtime-es5.js.map (runtime) 6.16 kB [entry] [rendered]
+chunk {styles} styles-es2015.js, styles-es2015.js.map (styles) 1.16 MB [initial] [rendered]
+chunk {styles} styles-es5.js, styles-es5.js.map (styles) 1.16 MB [initial] [rendered]
+chunk {main} main-es2015.js, main-es2015.js.map (main) 45.4 kB [initial] [rendered]
+chunk {main} main-es5.js, main-es5.js.map (main) 49.8 kB [initial] [rendered]
+chunk {polyfills-es5} polyfills-es5.js, polyfills-es5.js.map (polyfills-es5) 797 kB [initial] [rendered]
+chunk {vendor} vendor-es2015.js, vendor-es2015.js.map (vendor) 4.44 MB [initial] [rendered]
+chunk {vendor} vendor-es5.js, vendor-es5.js.map (vendor) 5.35 MB [initial] [rendered]
+Date: 2021-02-09T13:47:46.213Z - Hash: 1f85ec07e767230b3d79 - Time: 133871ms
+
+C:\spdtest>y
+'y' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\spdtest>
+C:\spdtest>
+C:\spdtest>
+C:\spdtest>
+C:\spdtest>ng s --o
+0% compiling
